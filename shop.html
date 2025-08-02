@@ -366,44 +366,6 @@
         </div>
     </footer>
     
-    <script>
-        const mobileMenuIcon = document.getElementById('bar');
-        const closeNav = document.getElementById('close-nav');
-        const navList = document.querySelector('.nav');
-        
-        mobileMenuIcon.addEventListener('click', () => {
-            navList.classList.add('show');
-        });
-        
-        closeNav.addEventListener('click', () => {
-            navList.classList.remove('show');
-        });
-        
-        document.addEventListener('DOMContentLoaded', function() {
-            const productItems = document.querySelectorAll('.product-item-clickable');
-            
-            productItems.forEach(item => {
-                item.addEventListener('click', function(e) {
-                    if (e.target.closest('.pro-list__item-cart')) {
-                        return;
-                    }
-                    
-                    const productData = {
-                        mainImg: this.dataset.mainImg,
-                        thumbImg1: this.dataset.thumbImg1,
-                        thumbImg2: this.dataset.thumbImg2,
-                        thumbImg3: this.dataset.thumbImg3,
-                        thumbImg4: this.dataset.thumbImg4,
-                        title: this.dataset.title,
-                        price: this.dataset.price,
-                        description: this.dataset.description
-                    };
-                    
-                    localStorage.setItem('selectedProduct', JSON.stringify(productData));
-                    window.location.href = 'sproduct.html';
-                });
-            });
-        });
-    </script>
+    <script src="./script.js"></script>
 </body>
 </html>
