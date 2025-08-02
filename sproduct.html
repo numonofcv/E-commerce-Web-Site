@@ -1,25 +1,367 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cara - Product Details</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        /* Additional styles for the product details page */
+        #prodetails {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 40px 0;
+        }
+        
+        .single-pro-image {
+            flex: 1;
+            min-width: 300px;
+            margin-right: 40px;
+        }
+        
+        .single-pro-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .small-img-group {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .small-img-col {
+            flex-basis: 24%;
+            cursor: pointer;
+        }
+        
+        .small-img-col img {
+            border-radius: 6px;
+            transition: transform 0.3s ease;
+        }
+        
+        .small-img-col img:hover {
+            transform: scale(1.05);
+        }
+        
+        .single-pro-details {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .single-pro-details h4 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .single-pro-details h2 {
+            font-size: 26px;
+            color: #088178;
+            margin: 10px 0;
+        }
+        
+        .single-pro-details select,
+        .single-pro-details input {
+            display: block;
+            padding: 10px;
+            margin-bottom: 15px;
+            width: 100%;
+            border: 1px solid #e1e1e1;
+            border-radius: 4px;
+        }
+        
+        .single-pro-details input {
+            width: 60px;
+        }
+        
+        .single-pro-details button {
+            background: #088178;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .single-pro-details button:hover {
+            background: #065e58;
+        }
+        
+        .single-pro-details span {
+            display: block;
+            line-height: 1.6;
+            color: #465b52;
+        }
+        
+        @media (max-width: 768px) {
+            .single-pro-image {
+                margin-right: 0;
+                margin-bottom: 30px;
+            }
+            
+            .small-img-group {
+                flex-wrap: wrap;
+            }
+            
+            .small-img-col {
+                flex-basis: 48%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="navbar">
+                <a href="#">
+                    <img class="logo" src="img/logo.png" alt="Cara Logo">
+                </a>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li id="close-nav" class="nav-list__item close-btn">
+                            <i class="bi bi-x-lg"></i>
+                        </li>
+                        <li class="nav-list__item">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li class="nav-list__item">
+                            <a class="active" href="shop.html">Shop</a>
+                        </li>
+                        <li class="nav-list__item">
+                            <a href="blog.html">Blog</a>
+                        </li>
+                        <li class="nav-list__item">
+                            <a href="about.html">About</a>
+                        </li>
+                        <li class="nav-list__item">
+                            <a href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-list__item">
+                            <a href="cart.html">
+                                <i class="bi bi-bag"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="mobile-nav">
+                    <a href="cart.html">
+                        <i class="bi bi-bag"></i>
+                    </a>
+                    <i id="bar" class="bi bi-text-right" aria-label="Menu"></i>
+                </div>
+            </div>
+        </div>
+    </header>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Tech2etc Ecommerce Tutorial</title>
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <section id="prodetails" class="section-p1">
+        <div class="container">
+            <div class="single-pro-image">
+                <img src="img/products/f1.jpg" width="100%" id="mainImg" alt="Main product image">
+                <div class="small-img-group">
+                    <div class="small-img-col">
+                        <img src="img/products/f2.jpg" width="100%" class="small-img" alt="Product image 1">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="img/products/f3.jpg" width="100%" class="small-img" alt="Product image 2">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="img/products/f4.jpg" width="100%" class="small-img" alt="Product image 3">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="img/products/f5.jpg" width="100%" class="small-img" alt="Product image 4">
+                    </div>
+                </div>
+            </div>
 
-        <link rel="stylesheet" href="style.css">
-    </head>
+            <div class="single-pro-details">
+                <h6>Home / T-Shirts</h6>
+                <h4 id="product-title">Men's Fashion T-Shirts</h4>
+                <h2 id="product-price">$139.00</h2>
+                <select>
+                    <option>Select Size</option>
+                    <option>XL</option>
+                    <option>XXL</option>
+                    <option>Small</option>
+                    <option>Large</option>
+                </select>
+                <input type="number" value="1">
+                <button class="normal">Add To Cart</button>
+                <h4>Product Details</h4>
+                <span id="product-description">Gildan Ultra Cotton T-shirts are made from a substantial 6.0 oz. per sq. yd. fabric constructed from 100% cotton. This classic fit preshrunk jersey knit provides unmatched comfort with each wear. Featuring a taped neck and shoulder, and a seamless double-needle collar, and available in a range of colors, it offers it all in the ultimate head-turning package.</span>
+            </div>
+        </div>
+    </section>
 
-    <body>
+    <section id="product1" class="section-p1">
+        <div class="container">
+            <h2>New Arrivals</h2>
+            <p>Summer Collection - Modern Design</p>
+            <ul class="pro-list">
+                <li class="pro-list__item">
+                    <img src="img/products/n1.jpg" alt="Product 1" class="pro-list__item-img"/>
+                    <div class="pro-list__des">
+                        <span class="pro-list__brand">zara</span>
+                        <h5 class="pro-list__title">Casual Khaki Shirt</h5>
+                        <div class="pro-list__star">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <h4 class="pro-list__price">$70</h4>
+                    </div>
+                    <a href="#" class="pro-list__item-cart">
+                        <i class="bi bi-cart3"></i>
+                    </a>
+                </li>
+                <li class="pro-list__item">
+                    <img src="img/products/n2.jpg" alt="Product 2" class="pro-list__item-img"/>
+                    <div class="pro-list__des">
+                        <span class="pro-list__brand">hugo boss</span>
+                        <h5 class="pro-list__title">Formal Gray Shirt</h5>
+                        <div class="pro-list__star">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <h4 class="pro-list__price">$88</h4>
+                    </div>
+                    <a href="#" class="pro-list__item-cart">
+                        <i class="bi bi-cart3"></i>
+                    </a>
+                </li>
+                <li class="pro-list__item">
+                    <img src="img/products/n3.jpg" alt="Product 3" class="pro-list__item-img"/>
+                    <div class="pro-list__des">
+                        <span class="pro-list__brand">uniqlo</span>
+                        <h5 class="pro-list__title">Office White Shirt</h5>
+                        <div class="pro-list__star">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <h4 class="pro-list__price">$80</h4>
+                    </div>
+                    <a href="#" class="pro-list__item-cart">
+                        <i class="bi bi-cart3"></i>
+                    </a>
+                </li>
+                <li class="pro-list__item">
+                    <img src="img/products/n4.jpg" alt="Product 4" class="pro-list__item-img"/>
+                    <div class="pro-list__des">
+                        <span class="pro-list__brand">lacoste</span>
+                        <h5 class="pro-list__title">Sport Polo T-Shirt</h5>
+                        <div class="pro-list__star">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <h4 class="pro-list__price">$60</h4>
+                    </div>
+                    <a href="#" class="pro-list__item-cart">
+                        <i class="bi bi-cart3"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
 
+    <section id="newslater" class="section-p1 section-m1">
+        <div class="container">
+            <div class="newstext">
+                <h4>Sign Up For Newsletter</h4>
+                <p>Get E-mail updates about our latest shop and <span>special offers</span></p>
+            </div>
+            <div class="form">
+                <input type="text" placeholder="Your email address">
+                <button class="normal">Sign Up</button>
+            </div>
+        </div>
+    </section>
 
-        <script>
-            // script for image change on click
-        </script>
-
-
-        <script src="script.js"></script>
-    </body>
-
+    <footer class="section-p1">
+        <div class="container">
+            <div class="col">
+                <img class="logo" src="img/logo.png" alt="Cara Logo">
+                <h4>Contact</h4>
+                <p>
+                    <strong>Address:</strong>
+                    <address>562 Wellington Road, Street 32, San Francisco</address>
+                </p>
+                <p>
+                    <strong>Phone:</strong>
+                    +01 2222 365 /(+91) 01 2345 6789
+                </p>
+                <p>
+                    <strong>Hours:</strong>
+                    10:00 - 18:00, Mon - Sat
+                </p>
+                <div class="follow">
+                    <h4>Follow Us</h4>
+                    <div class="icon">
+                        <a href="#">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#">
+                            <i class="bi bi-twitter"></i>
+                        </a>
+                        <a href="#">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="#">
+                            <i class="bi bi-pinterest"></i>
+                        </a>
+                        <a href="#">
+                            <i class="bi bi-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <h4>About</h4>
+                <a href="#">About Us</a>
+                <a href="#">Delivery Information</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Contact Us</a>
+            </div>
+            <div class="col">
+                <h4>My Account</h4>
+                <a href="#">Sign In</a>
+                <a href="#">View Cart</a>
+                <a href="#">My Wishlist</a>
+                <a href="#">Track My Order</a>
+                <a href="#">Help</a>
+            </div>
+            <div class="col install">
+                <h4>Install App</h4>
+                <p>From App Store or Google Play</p>
+                <div class="row">
+                    <img src="img/pay/app.jpg" alt="App Store">
+                    <img src="img/pay/play.jpg" alt="Google Play">
+                </div>
+                <p>Secured Payment Gateways</p>
+                <img src="img/pay/pay.png" alt="Payment methods">
+            </div>
+            <div class="copyright">
+                <p>2021, Tech2 etc - HTML CSS Ecommerce Template</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="./script.js"></script>
+</body>
 </html>
